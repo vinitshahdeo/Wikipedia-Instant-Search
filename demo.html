@@ -1,0 +1,95 @@
+<html>
+<!--
+
+██╗    ██╗██╗██╗  ██╗██╗██████╗ ███████╗██████╗ ██╗ █████╗     ███████╗███████╗ █████╗ ██████╗  ██████╗██╗  ██╗
+██║    ██║██║██║ ██╔╝██║██╔══██╗██╔════╝██╔══██╗██║██╔══██╗    ██╔════╝██╔════╝██╔══██╗██╔══██╗██╔════╝██║  ██║
+██║ █╗ ██║██║█████╔╝ ██║██████╔╝█████╗  ██║  ██║██║███████║    ███████╗█████╗  ███████║██████╔╝██║     ███████║
+██║███╗██║██║██╔═██╗ ██║██╔═══╝ ██╔══╝  ██║  ██║██║██╔══██║    ╚════██║██╔══╝  ██╔══██║██╔══██╗██║     ██╔══██║
+╚███╔███╔╝██║██║  ██╗██║██║     ███████╗██████╔╝██║██║  ██║    ███████║███████╗██║  ██║██║  ██║╚██████╗██║  ██║
+ ╚══╝╚══╝ ╚═╝╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝    ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
+                                                                                                               
+
+-->
+  <head>
+    <title>Wikipedia Instant Search</title>
+    <!-- Made with love by Vinit Shahdeo -->
+    <meta charset="utf-8">
+    <meta name="language" content="en-us"/>  
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="distribution" content="Global" />
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="7 days"/>
+    <meta name="copyright" content="Vinit Shahdeo | VIT Vellore"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="An Instant Search Web App developed by Vinit Shahdeo">
+    <meta name="author" content="Vinit Shahdeo">
+    <meta name="email" content="vinitshahdeo@gmail.com">
+    <meta property="og:type" content="website" /> 
+    <meta property="og:title" content="Wikipedia Instant Search" />
+    <meta property="og:description" content="An Instant Search Web App developed by Vinit Shahdeo" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/vinitshahdeo/Wikipedia-Instant-Search/master/img/Wikipedia.png" />
+    <meta property="og:url" content="https://vinitshahdeo.github.io/HBD" />
+    <meta property="og:site_name" content="Wikipedia Instant Search" />
+
+    <meta name="twitter:card" content="website">
+    <meta name="twitter:site" content="Wikipedia Instant Search">
+    <meta name="twitter:title" content="Wikipedia Instant Search">
+    <meta name="twitter:description" content="An Instant Search Web App developed by Vinit Shahdeo">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/vinitshahdeo/Wikipedia-Instant-Search/master/img/Wikipedia.png">
+
+	<meta itemprop="name" content="Wikipedia Instant Search">
+	<meta itemprop="description" content="An Instant Search Web App developed by Vinit Shahdeo">
+	<meta itemprop="image" content="https://raw.githubusercontent.com/vinitshahdeo/Wikipedia-Instant-Search/master/img/Wikipedia.png">
+      
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/ico" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+  <body>
+	<h1>Search Wikipedia!</h1>
+	<br />
+      <form class="searchform">
+    <input type="text" id="query" />
+    <button id="search" class="search">search</button></form>
+    <div id="results"></div>
+    <script>
+      $("#query").keyup(function(e){
+        var q = $("#query").val();
+        $.getJSON("http://en.wikipedia.org/w/api.php?callback=?",
+        {
+          srsearch: q,
+          action: "query",
+          list: "search",
+          format: "json"
+        },
+        function(data) {
+          $("#results").empty();
+          $("#results").append("<p>Results for <b>" + q + "</b></p>");
+          $.each(data.query.search, function(i,item){
+            $("#results").append("<div><a href='http://en.wikipedia.org/wiki/" + encodeURIComponent(item.title) + "'>" + item.title + "</a><br>" + item.snippet + "<br><br></div>");
+          });
+        });
+      });
+    </script>
+    <div id="developer">
+     Made with love by <a href="http://github.com/vinitshahdeo/" target="_blank"> Vinit Shahdeo</a><br>
+      <br>
+    </div>
+  </body>
+<!-- 
+
+███╗   ███╗ █████╗ ██████╗ ███████╗    ██████╗ ██╗   ██╗    ██╗   ██╗██╗███╗   ██╗██╗████████╗    ███████╗██╗  ██╗ █████╗ ██╗  ██╗██████╗ ███████╗ ██████╗ 
+████╗ ████║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗╚██╗ ██╔╝    ██║   ██║██║████╗  ██║██║╚══██╔══╝    ██╔════╝██║  ██║██╔══██╗██║  ██║██╔══██╗██╔════╝██╔═══██╗
+██╔████╔██║███████║██║  ██║█████╗      ██████╔╝ ╚████╔╝     ██║   ██║██║██╔██╗ ██║██║   ██║       ███████╗███████║███████║███████║██║  ██║█████╗  ██║   ██║
+██║╚██╔╝██║██╔══██║██║  ██║██╔══╝      ██╔══██╗  ╚██╔╝      ╚██╗ ██╔╝██║██║╚██╗██║██║   ██║       ╚════██║██╔══██║██╔══██║██╔══██║██║  ██║██╔══╝  ██║   ██║
+██║ ╚═╝ ██║██║  ██║██████╔╝███████╗    ██████╔╝   ██║        ╚████╔╝ ██║██║ ╚████║██║   ██║       ███████║██║  ██║██║  ██║██║  ██║██████╔╝███████╗╚██████╔╝
+╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝    ╚═════╝    ╚═╝         ╚═══╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝       ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝ ╚═════╝ 
+                                                                                                                                                           
+
+-->
+  <!-- Made with love by Vinit Shahdeo -->
+</html>
