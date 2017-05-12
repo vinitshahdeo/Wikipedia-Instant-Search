@@ -1,2 +1,2 @@
 # Wikipedia-Instant-Search
-An instant search application made using Wikipedia API
+#### An instant search application made using Wikipedia API.
