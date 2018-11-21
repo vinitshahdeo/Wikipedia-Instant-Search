@@ -13,6 +13,7 @@ This **instant search** is built using **Ajax** and **JQuery**. This application
 
 - Replace the **`id`** or **`class name`** of the search box and you can implement the same in your exisiting project.
 
+<hr>
 
 ```javascript
 
@@ -35,12 +36,16 @@ $(".searchbox").autocomplete({
 
 ```
 
+<hr>
+
 
 ### Useful links
 
 - [JQuery Autocomplete UI](http://jqueryui.com/autocomplete/)
 - [Wikipedia Opensearch API](https://www.mediawiki.org/wiki/API:Opensearch)
 
-<hr>
+### License
 
-Thank You!
+[![GitHub license](https://img.shields.io/github/license/vinitshahdeo/Wikipedia-Instant-Search.svg?style=for-the-badge)](https://github.com/vinitshahdeo/Wikipedia-Instant-Search/blob/master/LICENSE)
+
+MIT &copy; [Vinit Shahdeo](https://github.com/vinitshahdeo/Wikipedia-Instant-Search/blob/master/LICENSE)
