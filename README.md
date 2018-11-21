@@ -47,4 +47,4 @@ $(".searchbox").autocomplete({
 
 [![GitHub license](https://img.shields.io/github/license/vinitshahdeo/Wikipedia-Instant-Search.svg?style=for-the-badge)](https://github.com/vinitshahdeo/Wikipedia-Instant-Search/blob/master/LICENSE)
 
-MIT &copy; [Vinit Shahdeo](https://github.com/vinitshahdeo/Wikipedia-Instant-Search/blob/master/LICENSE)
+**MIT &copy; [Vinit Shahdeo](https://github.com/vinitshahdeo/Wikipedia-Instant-Search/blob/master/LICENSE)**
