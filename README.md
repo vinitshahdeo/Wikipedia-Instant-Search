@@ -1,7 +1,6 @@
 # Wikipedia Instant Search
-<center>
-[![Generic badge](https://img.shields.io/badge/Wikipedia-Opensearch-dodgerblue.svg?style=for-the-badge)](https://github.com/vinitshahdeo/coaching-website) 
-    [![Generic badge](https://img.shields.io/badge/Instant-Search-teal.svg?style=for-the-badge)](https://getbootstrap.com/) [![Generic badge](https://img.shields.io/badge/Auto-Complete-darkslatgray.svg?style=for-the-badge)](https://facebook.com/vinit.shahdeo/) </center>
+
+[![Generic badge](https://img.shields.io/badge/Wikipedia-Opensearch-dodgerblue.svg?style=for-the-badge)](https://github.com/vinitshahdeo/Wikipedia-Instant-Search) [![Generic badge](https://img.shields.io/badge/Instant-Search-teal.svg?style=for-the-badge)](http://codecombat.000webhostapp.com/wikipedia/) [![Generic badge](https://img.shields.io/badge/Auto-Complete-darkslatgray.svg?style=for-the-badge)](http://codecombat.000webhostapp.com/wikipedia/) 
 
 #### An instant search application made using [Wikipedia Opensearch API](https://www.mediawiki.org/wiki/API:Opensearch).
 
